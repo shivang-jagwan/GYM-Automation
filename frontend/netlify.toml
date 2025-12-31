@@ -1,0 +1,43 @@
+# =============================================================================
+# NETLIFY DEPLOYMENT CONFIGURATION
+# =============================================================================
+# This file configures how Netlify builds and deploys the frontend
+# =============================================================================
+
+[build]
+  # Build command
+  command = "npm run build"
+  
+  # Directory to publish (React build output)
+  publish = "build"
+  
+  # Base directory (if deploying from monorepo root)
+  # base = "frontend"
+
+[build.environment]
+  # Node version
+  NODE_VERSION = "20"
+  
+  # CI flag to treat warnings as non-errors
+  CI = "false"
+
+# =============================================================================
+# SPA REDIRECT RULES
+# =============================================================================
+# Ensures React Router works correctly (fallback to index.html)
+# =============================================================================
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# =============================================================================
+# SECURITY HEADERS
+# =============================================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
