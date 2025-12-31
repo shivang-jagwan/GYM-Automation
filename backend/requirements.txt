@@ -17,6 +17,10 @@ psycopg2-binary==2.9.11
 # Environment Variables
 python-dotenv==1.2.1
 
+# Production Server
+gunicorn==21.2.0
+whitenoise==6.6.0
+
 # Django internals (auto-installed)
 asgiref==3.11.0
 sqlparse==0.5.5
