@@ -1,0 +1,23 @@
+# =============================================================================
+# GYM MANAGEMENT SYSTEM - Backend Dependencies
+# =============================================================================
+# Python 3.10+ required
+# Install: pip install -r requirements.txt
+# =============================================================================
+
+# Django Framework
+Django==6.0
+djangorestframework==3.16.1
+django-cors-headers==4.9.0
+django-crontab==0.7.1
+
+# Database
+psycopg2-binary==2.9.11
+
+# Environment Variables
+python-dotenv==1.2.1
+
+# Django internals (auto-installed)
+asgiref==3.11.0
+sqlparse==0.5.5
+tzdata==2025.3
